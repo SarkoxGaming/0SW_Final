@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Car/Voiture.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Pickups/Coin5.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10000, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 235.308, 10 )
+
+[node name="World" type="Node2D"]
+
+[node name="Voiture" parent="." instance=ExtResource( 1 )]
+position = Vector2( 555.387, 352.954 )
+
+[node name="Coin5" type="Sprite" parent="."]
+position = Vector2( 107.347, 452.45 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 565.721, 572.456 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 888.99, 502.863 )
+rotation = -0.523599
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1295.32, 498.373 )
+rotation = 0.523599
+shape = SubResource( 2 )
+
+[node name="Coin6" type="Sprite" parent="."]
+position = Vector2( 1045.73, 425.511 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
