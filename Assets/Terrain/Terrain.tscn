@@ -1,13 +1,22 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Terrain/Terrain.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Car/Voiture.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Terrain/DirtBG.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Pickups/Gas.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Pickups/Coin.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Other/SceneBG.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Other/Clouds.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Other/Background/01_Sky.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Other/Background/05_Cloud.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Other/FallingBomb.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Other/Background/06_Cloud.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Other/Background/09_Cloudsmall.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Other/Background/07_Cloud.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Other/Background/08_Cloud.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Other/Background/04_Cloud.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Other/Background/03_Moon.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Other/Background/11_Mountains.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Other/Background/12_Desert.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Other/Background/10_Cloudsmall.png" type="Texture" id=18]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 50.0
@@ -17,25 +26,6 @@ script = ExtResource( 1 )
 gas = ExtResource( 4 )
 coin = ExtResource( 5 )
 bomb = ExtResource( 8 )
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
-motion_scale = Vector2( 0.8, 1 )
-motion_mirroring = Vector2( 3000, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 6 )
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 974.077, -339.794 )
-motion_scale = Vector2( 1.2, 1 )
-motion_mirroring = Vector2( 3000, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 723.855, -44.4473 )
-texture = ExtResource( 7 )
 
 [node name="Voiture" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1101.95, -1500 )
@@ -48,3 +38,94 @@ polygon = PoolVector2Array( 283.077, -52.6492, -6.04785, -400.994, -162.846, -59
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 texture = ExtResource( 3 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2( 1.5, 1.5 )
+transform = Transform2D( 1.5, 0, 0, 1.5, 0, 0 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 694.224, -1007.47 )
+motion_scale = Vector2( 0.05, 0 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( -13.0593, 182.315 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 694.224, -1007.47 )
+motion_scale = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1500, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( -13.0593, 182.315 )
+texture = ExtResource( 15 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+position = Vector2( 698.836, -1021.38 )
+motion_scale = Vector2( 1, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( -6.71942, 262.064 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+texture = ExtResource( 7 )
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
+texture = ExtResource( 9 )
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer7"]
+texture = ExtResource( 11 )
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer8"]
+texture = ExtResource( 13 )
+
+[node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer9"]
+texture = ExtResource( 10 )
+
+[node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer10"]
+texture = ExtResource( 18 )
+
+[node name="ParallaxLayer11" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 694.224, -1007.47 )
+motion_scale = Vector2( 0.1, 0 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer11"]
+position = Vector2( -13.0593, 182.315 )
+texture = ExtResource( 16 )
+centered = false
+
+[node name="ParallaxLayer12" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 694.224, -1007.47 )
+motion_scale = Vector2( 0.5, 0 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer12"]
+position = Vector2( -13.0593, 182.315 )
+texture = ExtResource( 17 )
+centered = false
