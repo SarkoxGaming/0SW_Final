@@ -25,7 +25,7 @@ public class Voiture : RigidBody2D
     Node2D terrain;
 
     ProgressBar bar;
-    ProgressBar nitro;
+    TextureProgress nitro;
     RichTextLabel speed;
     RichTextLabel distanceLabel;
 
@@ -43,7 +43,7 @@ public class Voiture : RigidBody2D
         Mass = (float) PlayerSettings.Call("GetCarMass");
 
         bar = GetNode<ProgressBar>("/root/Hud/ProgressBar");
-        nitro = GetNode<ProgressBar>("/root/Hud/NitroBar");
+        nitro = GetNode<TextureProgress>("/root/Hud/NitroBar");
         speed = GetNode<RichTextLabel>("/root/Hud/SpeedValue/Speed");
         distanceLabel = GetNode<RichTextLabel>("/root/Hud/distanceReachLabel/distanceReachValue");
         bar.Value = bar.MaxValue;

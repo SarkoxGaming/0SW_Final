@@ -1,8 +1,12 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/HUDs/Explication.cs" type="Script" id=1]
+[ext_resource path="res://Assets/Ressource/MoneyFont.tres" type="DynamicFont" id=11]
 
 [node name="EditCar" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -15,3 +19,41 @@ margin_bottom = 607.646
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 10.0
+margin_top = 7.0
+margin_right = 2005.0
+margin_bottom = 1045.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/normal_font = ExtResource( 11 )
+text = "But: 
+ - Il n'y a pas vraiment de but à ce jeu. Aller le plus loin possible pourrait être un bon but.
+
+Fonctionnement: 
+ - Utiliser \"A\" ou \"D\" pour avancer. Les flèches fonctionnent aussi.
+ - Appuyer sur \"Espace\" pour utiliser votre nitro
+ - Ne plus avoir de gas ou tomber à l'envers cause la fin de la course.
+ - Appuyer sur \"P\" afin de mettre le jeu sur pause.
+ - Appuyer sur \"O\" termine la course SANS sauvegarde.
+
+ - Toute les 10 secondes, une bombe tombe au dessus du véhicule. Si elle vous touche, vous perdez 50% de votre gas.
+
+- Récolter des pièces durant votre course afin d'améliorer votre véhicule!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 15.5476
+margin_top = 533.803
+margin_right = 214.548
+margin_bottom = 599.803
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 11 )
+text = "Retour"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

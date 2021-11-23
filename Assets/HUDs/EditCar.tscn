@@ -374,8 +374,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="LinkButton" type="LinkButton" parent="."]
+margin_left = 851.235
+margin_top = 98.4686
+margin_right = 1289.23
+margin_bottom = 158.469
+rect_scale = Vector2( 0.25, 0.25 )
+custom_fonts/font = ExtResource( 11 )
+text = "Comment jouer?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Speed/SpeedUpgrade" to="." method="_on_SpeedUpgrade_pressed"]
 [connection signal="pressed" from="Gas/GasUpgrade" to="." method="_on_GasUpgrade_pressed"]
 [connection signal="pressed" from="Gravity/GravityUpgrade" to="." method="_on_GravityUpgrade_pressed"]
 [connection signal="pressed" from="Nitro/NitroUpgrade" to="." method="_on_NitroUpgrade_pressed"]
+[connection signal="pressed" from="LinkButton" to="." method="_on_LinkButton_pressed"]

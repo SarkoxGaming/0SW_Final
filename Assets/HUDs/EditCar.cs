@@ -60,6 +60,11 @@ public class EditCar : Control
         PlayerSettings.Call("QuickSave");
     }
 
+    public void _on_LinkButton_pressed() {
+        PlayerSettings.Call("QuickSave");
+        GetTree().ChangeScene("res://Assets/HUDs/Explication.tscn");
+    }
+
     private void updateBuying(Control node, int savedLvl) {
         RichTextLabel lvl = node.GetChild<RichTextLabel>(0);
         RichTextLabel cost = node.GetChild<RichTextLabel>(1);

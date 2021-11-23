@@ -25,7 +25,7 @@ public class PlayerSettings : Node2D
     CanvasLayer HUD;
     RichTextLabel coinLabel;
     ProgressBar gas;
-    ProgressBar nitro;
+    TextureProgress nitro;
     RichTextLabel speedDebug;
     Boolean debugMode = false;
 
@@ -35,7 +35,7 @@ public class PlayerSettings : Node2D
     {
         HUD = GetNode<CanvasLayer>("/root/Hud");
         gas = HUD.GetChild<ProgressBar>(0);
-        nitro = HUD.GetNode<ProgressBar>("NitroBar");
+        nitro = HUD.GetNode<TextureProgress>("NitroBar");
         speedDebug = GetNode<RichTextLabel>("/root/Hud/SpeedValue");
         LoadGame();
     }

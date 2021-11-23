@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Ressource/ProgressBar.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Assets/HUDs/PauseButton.cs" type="Script" id=6]
 [ext_resource path="res://Assets/HUDs/HUD.cs" type="Script" id=7]
-[ext_resource path="res://Assets/Ressource/nitro_bar.tres" type="Theme" id=8]
+[ext_resource path="res://Assets/HUDs/Icons/Nitro_TextureBar.png" type="Texture" id=8]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 7 )
@@ -161,15 +161,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NitroBar" type="ProgressBar" parent="."]
-margin_left = 11.0
-margin_top = 542.0
-margin_right = 355.0
-margin_bottom = 588.0
-theme = ExtResource( 8 )
-custom_fonts/font = ExtResource( 5 )
-value = 40.0
-rounded = true
+[node name="NitroBar" type="TextureProgress" parent="."]
+margin_left = 15.3431
+margin_top = 322.409
+margin_right = 103.343
+margin_bottom = 674.409
+rect_scale = Vector2( 0.75, 0.75 )
+value = 100.0
+texture_progress = ExtResource( 8 )
+fill_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
