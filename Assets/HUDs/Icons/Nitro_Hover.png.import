@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fuel.png-583f7df2730574eb610b09f9325be815.stex"
+path="res://.import/Nitro_Hover.png-fb1e8d53c2ea25b6b2fba128766c2fbf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pickups/Fuel.png"
-dest_files=[ "res://.import/Fuel.png-583f7df2730574eb610b09f9325be815.stex" ]
+source_file="res://Assets/HUDs/Icons/Nitro_Hover.png"
+dest_files=[ "res://.import/Nitro_Hover.png-fb1e8d53c2ea25b6b2fba128766c2fbf.stex" ]
 
 [params]
 

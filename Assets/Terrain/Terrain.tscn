@@ -1,14 +1,50 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Terrain/Terrain.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Car/Voiture.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Terrain/DirtBG.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Pickups/Gas.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Pickups/Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Other/SceneBG.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Other/Clouds.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Other/FallingBomb.tscn" type="PackedScene" id=8]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 50.0
 
 [node name="Terrain" type="Node2D"]
 script = ExtResource( 1 )
+gas = ExtResource( 4 )
+coin = ExtResource( 5 )
+bomb = ExtResource( 8 )
 
-[node name="Line2D" type="Line2D" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+motion_scale = Vector2( 0.8, 1 )
+motion_mirroring = Vector2( 3000, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 6 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 974.077, -339.794 )
+motion_scale = Vector2( 1.2, 1 )
+motion_mirroring = Vector2( 3000, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 723.855, -44.4473 )
+texture = ExtResource( 7 )
 
 [node name="Voiture" parent="." instance=ExtResource( 2 )]
-position = Vector2( 497.393, -225.762 )
+position = Vector2( 1101.95, -1500 )
+
+[node name="Floor" type="StaticBody2D" parent="."]
+physics_material_override = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor"]
+polygon = PoolVector2Array( 283.077, -52.6492, -6.04785, -400.994, -162.846, -593.428, -305.39, -785.862, -419.425, -949.787, -504.951, -1085.2, -740.148, -1491.45, -979.892, -1784.14, -2212.3, -1947.1, -2108.57, 710.848, 428.71, 575.431 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture = ExtResource( 3 )
